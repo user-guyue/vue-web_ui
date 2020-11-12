@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-11-11 21:41:57
+ * @LastEditTime: 2020-11-12 23:47:53
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \vue-web_ui\src\router\index.js
+ */
 // 引入vue
 import Vue from 'vue'
 // 引入路由vue-router
@@ -24,4 +32,5 @@ const routes = [
 const router = new VueRouter({
   routes// routes: routes 的简写
 })
+
 export default router
