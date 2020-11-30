@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-11 21:41:56
- * @LastEditTime: 2020-11-11 23:19:16
+ * @LastEditTime: 2020-11-20 00:08:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue_ui\src\App.vue
@@ -32,5 +32,20 @@
       color: #42b983;
     }
   }
+}
+.marginRight10{
+  margin-right: 10px;
+}
+.error-color {
+  color:#ff4d4f;
+}
+.success-color{
+  color: #52c41a;
+}
+.error-background {
+  background: #ff4d4f;
+}
+.success-background{
+  background: #52c41a!important;
 }
 </style>
