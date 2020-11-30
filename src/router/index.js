@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2020-11-11 21:41:57
- * @LastEditTime: 2020-11-12 23:47:53
+ * @LastEditTime: 2020-11-16 22:51:57
  * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: \vue-web_ui\src\router\index.js
+ * @FilePath: \响应式布局d:\practise\projectVue\vue-web_ui\src\router\index.js
  */
 // 引入vue
 import Vue from 'vue'
