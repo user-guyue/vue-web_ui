@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-11 21:41:57
- * @LastEditTime: 2020-11-11 23:41:26
+ * @LastEditTime: 2020-11-16 21:36:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue_ui\src\views\Home.vue
@@ -18,24 +18,12 @@
     >
     <a-form-model-item prop="user">
         <a-input v-model="form.user" placeholder="请输入用户名">
-        <a-icon
-            slot="prefix"
-            type="user"
-            style="color: rgba(0, 0, 0, 0.25)"
-        />
+        <a-icon slot="prefix" type="user" style="color: rgba(0, 0, 0, 0.25)"/>
         </a-input>
     </a-form-model-item>
     <a-form-model-item prop="password">
-        <a-input
-        v-model="form.password"
-        type="password"
-        placeholder="请输入密码"
-        >
-        <a-icon
-            slot="prefix"
-            type="lock"
-            style="color: rgba(0, 0, 0, 0.25)"
-        />
+        <a-input v-model="form.password" type="password" placeholder="请输入密码">
+        <a-icon slot="prefix" type="lock" style="color: rgba(0, 0, 0, 0.25)"/>
         </a-input>
     </a-form-model-item>
     <a-form-model-item>

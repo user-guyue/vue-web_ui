@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-11 21:41:57
- * @LastEditTime: 2020-11-12 23:42:46
+ * @LastEditTime: 2020-11-12 23:46:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue_ui\src\views\About.vue
@@ -16,7 +16,9 @@
 export default {
   name: 'About',
   data() {
-    return {}
+    return {
+      
+    }
   },
   methods: {}
 }
