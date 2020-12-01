@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-11 21:41:57
- * @LastEditTime: 2020-12-01 01:44:59
+ * @LastEditTime: 2020-12-01 22:10:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue_ui\src\views\Home.vue
@@ -72,9 +72,11 @@
       <a-table
         :row-selection="{ selectedRowKeys: selectedRowKeys, onChange: onSelectChange }"
         :columns="columnTitle"
+        :pagination="pagination"
+        @change="changeTable"
         :data-source="dataInfo"
       >
-        <a slot="name" slot-scope="text">{{ text }}</a>
+        <span slot="num" slot-scope="text, record, index">{{ index+1 }}</span>
         <div slot="action" slot-scope="text, record, index">
           <a class="marginRight10" @click="editRecord(record, index)">编辑</a>
           <a class="error-color" @click="delRecord(record, index)">删除</a>
@@ -153,6 +155,7 @@ export default {
         {
           title: "#",
           dataIndex: "num",
+          scopedSlots: { customRender: "num" }
         },
         {
           title: "作业编号",
@@ -201,9 +204,18 @@ export default {
         {
           title: "操作",
           dataIndex: "action",
-          scopedSlots: { customRender: "action" },
+          scopedSlots: { customRender: "action" }
         },
       ],
+      // 分页
+      pagination: {
+        total: 0,
+        // 每页的数据条数
+        pageSize: 5,
+        // 当前页数
+        current: 1,
+        showTotal: (total, range) => `显示 ${range[0]} ~ ${range[1]} 条记录，共 ${total} 条记录`
+      },
       dataInfo: [],
       // table选中项
       selectedRowKeys: [],
@@ -239,7 +251,6 @@ export default {
     getDataInfo() {
       const items = [
         {
-          num: '1',
           jobNo: 'job1',
           enterNo: '',
           customer: 'xiaohong',
@@ -253,7 +264,6 @@ export default {
           payable: ''
         },
         {
-          num: '2',
           jobNo: 'job2',
           enterNo: '',
           customer: 'xiaohong',
@@ -285,7 +295,6 @@ export default {
       items.forEach((item, index) => {
         const data = {
           key:index,
-          num:index+1,
           jobNo: item.jobNo,
           enterNo: item.enterNo,
           customer: item.customer,
@@ -308,6 +317,7 @@ export default {
       this.modelTitle = '新增'
       this.modelKey = null
       this.visible = true
+      this.formModel= {}
     },
     // 批量删除
     delList() {},
@@ -371,6 +381,16 @@ export default {
       // 取消验证规则
       this.$refs.ruleForm.resetFields();
       this.visible = false
+    },
+    // 分页
+    changeTable(pagination) {
+      console.log(pagination)
+      this.pagination.current = pagination.current
+      this.pagination.pageSize = pagination.pageSize
+      // const param = Object.assign({}, this.formTab)
+      // param.page = pagination.current
+      // param.pageSize = pagination.pageSize
+      // this.getInfo(param)
     }
   },
 };
