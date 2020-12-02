@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-11 21:41:57
- * @LastEditTime: 2020-12-01 22:10:35
+ * @LastEditTime: 2020-12-02 23:10:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue_ui\src\views\Home.vue
@@ -320,7 +320,16 @@ export default {
       this.formModel= {}
     },
     // 批量删除
-    delList() {},
+    delList() {
+      const data = this.dataInfo
+      const selectItem = this.selectedRowKeys
+      for(let j = 0;j < selectItem.length;j++){
+        for(let k = 0;k < data.length;k++)
+          if(data[k].key === selectItem[j]) {
+            this.dataInfo.splice(k,1)
+        }
+      }
+    },
     // 编辑
     editRecord(record, index) {
       this.modelTitle = '编辑'
