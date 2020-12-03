@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-11 21:41:57
- * @LastEditTime: 2020-11-16 21:36:11
+ * @LastEditTime: 2020-12-04 00:25:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue_ui\src\views\Home.vue
@@ -66,7 +66,7 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .ant-form-item {
   margin-bottom: 14px;
 }
