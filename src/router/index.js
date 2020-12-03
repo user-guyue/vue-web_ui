@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-11-11 21:41:57
- * @LastEditTime: 2020-11-16 22:51:57
- * @LastEditors: your name
+ * @LastEditTime: 2020-12-03 22:14:09
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \响应式布局d:\practise\projectVue\vue-web_ui\src\router\index.js
  */
@@ -13,6 +13,11 @@ import VueRouter from 'vue-router'
 // 把路由安装到vue上面
 Vue.use(VueRouter)
 const routes = [
+  {
+    path: '/menu',// 访问的地址
+    name: 'Menu',
+    component: () => import('../views/Menu')// 页面的路径
+  },
   {
     path: '/login',// 访问的地址
     name: 'Login',
